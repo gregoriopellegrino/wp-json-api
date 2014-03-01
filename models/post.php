@@ -150,6 +150,7 @@ class JSON_API_Post {
     $this->set_thumbnail_value();
     $this->set_custom_fields_value();
     $this->set_custom_taxonomies($wp_post->post_type);
+    $this->set_value('is_sticky', is_sticky($this->id));
     do_action("json_api_import_wp_post", $this, $wp_post);
   }
   
